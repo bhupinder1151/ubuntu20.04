@@ -1,0 +1,93 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  font-size: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container{
+  width: 100%;
+  height: 650px;
+  min-height: 100vh;
+  background:url(/img/warty-final-ubuntu.png) no-repeat center center/cover;
+}
+
+/* top-bar */
+.top-bar{
+  width: 100%;
+  height: 3rem;
+  background-color: black;
+  color: #fff;
+  display: flex;
+}
+.top-bar .act{
+  width: 9.5rem;
+  height: 100%;
+  float: left;
+  border-bottom: .3rem solid transparent;
+}
+.act div,.time div{
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 3rem;
+}
+
+.top-bar .time{
+  width: 20rem;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.top-bar .setting{
+  width: 14rem;
+  height: 100%;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-bottom: .3rem solid transparent;
+}
+.setting .fas{
+  font-size: 1.4rem;
+  line-height: 3rem;
+}
+
+
+/* dash */
+.dash{
+  height: calc(100% - 3rem);
+  width: 7rem;
+  background-color: #1C2833;
+  position: relative;
+}
+.dash .icon-box{
+  width: 100%;
+  height: calc(100% - 7rem);
+  padding: .3rem .4rem .3rem .2rem;
+}
+.dash .icons{
+  width: 100%;
+  height: 6.4rem;
+  padding: .5rem;
+  border-radius: 1rem;
+  transition: all ease-in-out 0.4s;
+}
+.dash .icons:hover{
+  background-color: #2C3E50;
+  cursor: default;
+}
+.dash .icons img{
+  width: 100%;
+  height: 100%;
+}
+.dash .all-apps{
+  width: 100%;
+  height: 7rem;
+  padding: .3rem .4rem .3rem .2rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
