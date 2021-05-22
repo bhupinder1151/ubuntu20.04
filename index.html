@@ -6,70 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ubuntu</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
+    /> -->
   </head>
   <body>
     <div id="loader">
       <div id="spinner"></div>
     </div>
     <div class="container">
-      <div class="top-bar">
-        <div class="act">
+      <div class="top-bar" id="top-bar">
+        <div class="act" id="act">
           <div>Activities</div>
         </div>
 
-        <div class="time" id="time">
-          <div>
-           May21 5:27PM
-          </div>
+        <div id="time">
+          <div id="today">May21 5:27PM</div>
           <div id="time-box">
-            <div class="triangle" ></div>
-            <hr>
-            <div class="content"></div>            
+            <div class="triangle"></div>
+            <div class="content"></div>
           </div>
         </div>
 
-        <div class="setting" id="setting">
-          <i class="fas fa-wifi"></i>
-          <i class="fas fa-volume-up"></i>
-          <!-- <i class="fas fa-microphone"></i> -->
-          <i class="fas fa-battery-full" style="transform: rotate(-90deg)"></i>
+        <div id="setting">
+          <div id="setting-icons">
+            <img src="/img/icons/network-wireless-signal-excellent-symbolic.svg" alt=".">
+            <img src="/img/icons/audio-speakers-symbolic.svg" alt=".">
+            <img src="/img/icons/battery-full-symbolic.svg" alt=".">
+          </div>
 
           <div id="setting-box">
-            <div class="triangle" ></div>
-            <div class="option-box"></div>            
+            <div class="triangle"></div>
+            <div class="option-box"></div>
           </div>
-
         </div>
       </div>
-      <div class="dash">
+      <div class="dash" id="dash">
         <div class="icon-box">
           <div class="icons">
-            <img src="/img/icons/mozilla-firefox.png" alt="" />
+            <img src="/img/icons/firefox.svg" alt="." />
           </div>
           <div class="icons">
-            <img src="/img/icons/mozilla-firefox.png" alt="" />
+            <img src="/img/icons/thunderbird.svg" alt="." />
           </div>
           <div class="icons">
-            <img src="/img/icons/mozilla-firefox.png" alt="" />
+            <img src="/img/icons/filemanager-app.png" alt="." />
           </div>
           <div class="icons">
-            <img src="/img/icons/mozilla-firefox.png" alt="" />
+            <img src="/img/icons/rhythmbox.png" alt="." />
+          </div>
+          <div class="icons">
+            <img src="/img/icons/libreoffice-writer.png" alt="." />
+          </div>
+          <div class="icons">
+            <img src="/img/icons/software-store.png" alt="." />
+          </div>
+          <div class="icons">
+            <img src="/img/icons/help.png" alt="." />
           </div>
         </div>
 
         <div class="all-apps">
           <div class="icons">
-            <img src="/img/icons/apps.svg" alt="" />
+            <img src="/img/icons/view-app-grid-symbolic.svg" alt="." />
           </div>
         </div>
       </div>
+    </div>
+    <div class="back" id="back01">
+      <div class="input">
+        <input type="search" name="search" id="search" placeholder="Type to search">
+      </div>
+      <div class="workspace">
+        <img src="/img/warty-final-ubuntu.png" alt=".">
+        <img src="/img/warty-final-ubuntu.png" alt=".">
+      </div>
+
     </div>
 
     <script src="/js/index.js"></script>

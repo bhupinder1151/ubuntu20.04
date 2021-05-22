@@ -1,9 +1,14 @@
 console.log("hello")
 
-var setting = document.getElementById("setting");
+var setting = document.getElementById("setting-icons");
 var settingBox = document.getElementById("setting-box");
-var time = document.getElementById("time");
+var time = document.getElementById("today");
 var timeBox = document.getElementById("time-box");
+var act = document.getElementById("act");
+var topBar = document.getElementById("top-bar");
+var dash = document.getElementById("dash");
+var back01 = document.getElementById("back01");
+
 
 settingBox.style.opacity = "0";
 settingBox.style.transform = "scaleY(0)";
@@ -11,6 +16,9 @@ settingBox.style.transform = "scaleY(0)";
 timeBox.style.opacity = "0";
 timeBox.style.transform = "scaleY(0)";
 
+// back01.style.opacity = "0";
+// back01.style.zIndex = "0";
+back01.style.display = "none";
 
 
 function hideTime(){
@@ -32,6 +40,22 @@ function showSetting(){
      setting.style.borderBottomColor = "orange";
     settingBox.style.opacity = "1";
     settingBox.style.transform = "scaleY(1)";
+}
+function hideAct(){
+    act.style.borderBottomColor = "transparent";
+    topBar.style.zIndex = "auto";
+    dash.style.zIndex = "auto";
+    // back01.style.opacity = "0";
+    // back01.style.zIndex = "0";
+    back01.style.display = "none";
+}
+function showAct(){
+     act.style.borderBottomColor = "orange";
+     topBar.style.zIndex = "99999";
+     dash.style.zIndex = "99999";
+    // back01.style.opacity = "1";
+    // back01.style.zIndex = "9999";
+    back01.style.display = "flex";
 }
 
 
@@ -66,7 +90,13 @@ time.addEventListener("click", function() {
   }
 });
 
-// document.getElementsByTagName("body").addEventListener("click", function(){
-//   hideSetting();
-//   hideTime();
-// });
+act.addEventListener("click", function(){
+
+  if ( back01.style.display == "none" ) {
+    showAct();
+    hideSetting();
+    hideTime();
+  } else {
+     hideAct();
+  }
+})

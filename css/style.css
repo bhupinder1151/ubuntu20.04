@@ -1,13 +1,16 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html,body{
+html,
+body {
   font-size: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    /* overflow: hidden; */
 }
-#loader{
+#loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,65 +22,68 @@ html,body{
   justify-content: center;
   align-items: center;
 }
-#spinner{
+#spinner {
   width: 14rem;
   height: 14rem;
-  border: 1rem solid #2C3E50;
+  border: 1rem solid #2c3e50;
   border-radius: 50%;
-  border-top: #eee solid 1rem ;
+  border-top: #eee solid 1rem;
   /* transform: scale(2); */
   animation: spinner linear 1s infinite;
 }
 @keyframes spinner {
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
-.container{
+.container {
   width: 100%;
   height: 650px;
   min-height: 100vh;
-  background:url(/img/warty-final-ubuntu.png) no-repeat center center/cover;
+  background: url(/img/warty-final-ubuntu.png) no-repeat center center/cover;
+  position: relative;
 }
 
 /* top-bar */
-.top-bar{
+.top-bar {
   width: 100%;
   height: 3rem;
   background-color: black;
   color: #fff;
   display: flex;
+  position: relative;
 }
-.top-bar .act{
+.top-bar .act {
   width: 9.5rem;
   height: 100%;
   float: left;
-  border-bottom: .3rem solid transparent;
+  border-bottom: 0.3rem solid transparent;
+  cursor: default;
 }
-.act div,#time div{
+.act div,
+#today {
   text-align: center;
   font-size: 1.7rem;
   line-height: 3rem;
 }
 
-.top-bar #time{
+.top-bar #time {
   width: 15rem;
   height: 100%;
   margin: 0 auto;
   position: relative;
-  border-bottom: .2rem solid transparent;
   display: flex;
   justify-content: center;
-  transition: all ease-out 0.2s;
-  cursor: default;
-}
-.time{
-  border-bottom: .2rem solid transparent;
+} 
+#time #today{
+  width: 100%;
+  height: 100%;
+  border-bottom: 0.2rem solid transparent;
   transition: all ease-out 0.2s;
   cursor: default;
 }
 
-#time-box{
+#time-box {
   width: 50rem;
   height: 40rem;
   position: absolute;
@@ -90,99 +96,177 @@ html,body{
   transform-origin: top right;
   transition: all ease-out 0.2s;
 }
-#time-box .triangle{
+.triangle {
   width: 1.2rem;
   height: 0;
   border-bottom: 1.2rem solid #fff;
   border-left: 1.2rem solid transparent;
   border-right: 1.2rem solid transparent;
-  transform: translateY( .2rem);
+  transform: translateY(0.1rem);
   transform-origin: top;
 }
-#time-box .content{
+#time-box .content {
   width: 100%;
   height: calc(100% - 1.2rem);
   background-color: #fff;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
 }
 
-.top-bar #setting{
+/* setting */
+
+.top-bar #setting {
   width: 10rem;
   height: 100%;
   float: right;
+  position: relative;
+}
+ #setting #setting-icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: 100%;
   padding: 0 1rem;
-  border-bottom: .2rem solid transparent;
-  position: relative;
+  cursor: default;
+  border-bottom: 0.2rem solid transparent;
   transition: all ease-out 0.2s;
 }
-#setting .fas{
+#setting .fas {
   font-size: 1.4rem;
   line-height: 3rem;
 }
 
-#setting-box{
+#setting-box {
   width: 25rem;
-  height: calc(100% * 10 );
+  height: calc(100% * 10);
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top right;
   position: absolute;
   top: 3.2rem;
   right: 1.3rem;
-  transition: all ease-out .2s;
+  transition: all ease-out 0.2s;
 }
 #setting-box .triangle{
-  width: 1.2rem;
-  height: 0;
-  border-bottom: 1.2rem solid #fff;
-  border-left: 1.2rem solid transparent;
-  border-right: 1.2rem solid transparent;
   margin-left: 80%;
-  transform: translateY( .1rem);
-  transform-origin: top;
 }
-#setting-box .option-box{
+
+#setting-box .option-box {
   width: 100%;
   height: calc(100% - 1.2rem);
   background-color: #fff;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
 }
 
 /* dash */
-.dash{
+.dash {
   height: calc(100% - 3rem);
   width: 7rem;
-  background-color: #1C2833;
+  background-color: #1c2833;
   position: relative;
 }
-.dash .icon-box{
+.dash .icon-box {
   width: 100%;
   height: calc(100% - 7rem);
-  padding: .3rem .4rem .3rem .2rem;
+  padding: 0.3rem 0.4rem 0.3rem 0.2rem;
 }
-.dash .icons{
+.dash .icons {
   width: 100%;
   height: 6.4rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   transition: all ease-in-out 0.4s;
 }
-.dash .icons:hover{
-  background-color: #2C3E50;
+.dash .icons:hover {
+  background-color: #2c3e50;
   cursor: default;
 }
-.dash .icons img{
+.dash .icons img {
   width: 100%;
   height: 100%;
 }
-.dash .all-apps{
+.dash .all-apps {
   width: 100%;
   height: 7rem;
-  padding: .3rem .4rem .3rem .2rem;
+  padding: 0.3rem 0.4rem 0.3rem 0.2rem;
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+.back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  padding: 5rem 0 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+.back::before{
+  content: '';
+  position: absolute;
+    top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.6;
+  z-index: 9999;
+}
+.back .input{
+  width: 35rem;
+  height: 3.5rem;
+  /* background: #eee; */
+  /* margin: 0 auto; */
+  align-self: center;
+}
+.back .input #search{
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  background: #fff;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 99999;
+  font-size: 1.6rem;
+  line-height: 100%;
+}
+::placeholder{
+  color: #777;
+}
+.workspace{
+  width: 17rem;
+  height: 85%;
+  align-self: flex-end;
+  margin-right: -10rem;
+  transition: all ease-out 0.3s;
+  padding: .1rem 0 .1rem .1rem;
+  position: relative;
+  z-index: 99999;
+}
+.workspace::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.3;
+}
+.workspace:hover{
+  margin-right: 0;
+}
+.workspace img{
+  width: 100%;
+  border: .3rem solid transparent;
+  position: relative;
+}
+.workspace img:hover{
+  border: .3rem solid #dd4814;
 }
