@@ -28,33 +28,93 @@ html,body{
   float: left;
   border-bottom: .3rem solid transparent;
 }
-.act div,.time div{
+.act div,#time div{
   text-align: center;
   font-size: 1.7rem;
   line-height: 3rem;
 }
 
-.top-bar .time{
-  width: 20rem;
+.top-bar #time{
+  width: 15rem;
   height: 100%;
   margin: 0 auto;
+  position: relative;
+  border-bottom: .2rem solid transparent;
+  display: flex;
+  justify-content: center;
+  transition: all ease-out 0.2s;
+  cursor: default;
 }
 
-.top-bar .setting{
-  width: 14rem;
+#time-box{
+  width: 50rem;
+  height: 40rem;
+  position: absolute;
+  top: 3.3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform-origin: top right;
+  transition: all ease-out 0.2s;
+}
+#time-box .triangle{
+  width: 1.2rem;
+  height: 0;
+  border-bottom: 1.2rem solid #fff;
+  border-left: 1.2rem solid transparent;
+  border-right: 1.2rem solid transparent;
+  transform: translateY( .2rem);
+  transform-origin: top;
+}
+#time-box .content{
+  width: 100%;
+  height: calc(100% - 1.2rem);
+  background-color: #fff;
+  border-radius: .4rem;
+}
+
+.top-bar #setting{
+  width: 10rem;
   height: 100%;
   float: right;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  border-bottom: .3rem solid transparent;
+  border-bottom: .2rem solid transparent;
+  position: relative;
+  transition: all ease-out 0.2s;
 }
-.setting .fas{
+#setting .fas{
   font-size: 1.4rem;
   line-height: 3rem;
 }
 
+#setting-box{
+  width: 25rem;
+  height: calc(100% * 10 );
+  transform-origin: top right;
+  position: absolute;
+  top: 3.2rem;
+  right: 1.3rem;
+  transition: all ease-out .2s;
+}
+#setting-box .triangle{
+  width: 1.2rem;
+  height: 0;
+  border-bottom: 1.2rem solid #fff;
+  border-left: 1.2rem solid transparent;
+  border-right: 1.2rem solid transparent;
+  margin-left: 80%;
+  transform: translateY( .1rem);
+  transform-origin: top;
+}
+#setting-box .option-box{
+  width: 100%;
+  height: calc(100% - 1.2rem);
+  background-color: #fff;
+  border-radius: .4rem;
+}
 
 /* dash */
 .dash{
