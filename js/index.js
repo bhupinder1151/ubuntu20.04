@@ -1,13 +1,75 @@
-console.log("hello")
+let setting = document.getElementById("setting-icons");
+let settingBox = document.getElementById("setting-box");
+let time = document.getElementById("today");
+let timeBox = document.getElementById("time-box");
+let act = document.getElementById("act");
+let topBar = document.getElementById("top-bar");
+let dash = document.getElementById("dash");
+let back01 = document.getElementById("back01");
 
-var setting = document.getElementById("setting-icons");
-var settingBox = document.getElementById("setting-box");
-var time = document.getElementById("today");
-var timeBox = document.getElementById("time-box");
-var act = document.getElementById("act");
-var topBar = document.getElementById("top-bar");
-var dash = document.getElementById("dash");
-var back01 = document.getElementById("back01");
+let nowTime = new Date();
+let month;
+console.log(nowTime.getSeconds())
+
+switch (nowTime.getMonth() + 1) {
+  case 1:
+    month = 'Jan'+nowTime.getDate();
+    break;
+  case 2:
+    month = 'Feb'+nowTime.getDate();
+    break;
+  case 3:
+    month = 'Mar'+nowTime.getDate();
+    break;
+  case 4:
+    month = 'Apr'+nowTime.getDate();
+    break;
+  case 5:
+    month = 'May'+nowTime.getDate();
+    break;
+  case 6:
+    month = 'Jun'+nowTime.getDate();
+    break;
+  case 7:
+    month = 'Jul'+nowTime.getDate();
+    break;
+  case 8:
+    month = 'Aug'+nowTime.getDate();
+    break;
+  case 9:
+    month = 'Sep'+nowTime.getDate();
+    break;
+  case 10:
+    month = 'Oct'+nowTime.getDate();
+    break;
+  case 11:
+    month = 'Nov'+nowTime.getDate();
+    break;
+  case 12:
+    month = 'Dec'+nowTime.getDate();
+    break;
+
+  default:
+    month = 'Jan'+nowTime.getDate();
+    break;
+}
+
+setInterval(()=>{
+  nowTime = new Date();
+  let hours = nowTime.getHours();
+  let minutes = nowTime.getMinutes();
+  let seconds = nowTime.getSeconds();
+  if (seconds.toString().length == 1) {
+    seconds = '0'+seconds;
+  }
+  if (hours.toString().length == 1) {
+    hours = '0'+hours;
+  }
+  if (minutes.toString().length == 1) {
+    minutes = '0'+minutes;
+  }
+  time.innerHTML = `${month} &nbsp;${hours}:${minutes}:${seconds}`;
+},1000)
 
 
 settingBox.style.opacity = "0";
@@ -71,7 +133,7 @@ document.onreadystatechange = function() {
 
 
 setting.addEventListener("click", function() {
- 
+
   if ( settingBox.style.opacity == "0" ) {
    showSetting();
    hideTime();
@@ -81,7 +143,7 @@ setting.addEventListener("click", function() {
 });
 
 time.addEventListener("click", function() {
- 
+
   if ( timeBox.style.opacity == "0" ) {
     showTime();
     hideSetting();
