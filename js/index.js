@@ -1,7 +1,9 @@
 let setting = document.getElementById("setting-icons");
 let settingBox = document.getElementById("setting-box");
+let settingBack = document.getElementById("setting-back");
 let time = document.getElementById("today");
 let timeBox = document.getElementById("time-box");
+let timeBack = document.getElementById("time-back");
 let act = document.getElementById("act");
 let topBar = document.getElementById("top-bar");
 let dash = document.getElementById("dash");
@@ -87,21 +89,25 @@ function hideTime(){
     time.style.borderBottomColor = "transparent";
     timeBox.style.opacity = "0";
     timeBox.style.transform = "scaleY(0)";
+    timeBack.style.display = "none";
 }
 function showTime(){
      time.style.borderBottomColor = "orange";
     timeBox.style.opacity = "1";
     timeBox.style.transform = "scaleY(1)";
+    timeBack.style.display = "block";
 }
 function hideSetting(){
     setting.style.borderBottomColor = "transparent";
     settingBox.style.opacity = "0";
     settingBox.style.transform = "scaleY(0)";
+    settingBack.style.display = "none";
 }
 function showSetting(){
      setting.style.borderBottomColor = "orange";
     settingBox.style.opacity = "1";
     settingBox.style.transform = "scaleY(1)";
+    settingBack.style.display = "block";
 }
 function hideAct(){
     act.style.borderBottomColor = "transparent";
@@ -142,6 +148,11 @@ setting.addEventListener("click", function() {
   }
 });
 
+settingBack.addEventListener("click",()=>{
+  hideSetting();
+});
+
+
 time.addEventListener("click", function() {
 
   if ( timeBox.style.opacity == "0" ) {
@@ -150,6 +161,10 @@ time.addEventListener("click", function() {
   } else {
      hideTime();
   }
+});
+
+timeBack.addEventListener("click",()=>{
+  hideTime();
 });
 
 act.addEventListener("click", function(){
