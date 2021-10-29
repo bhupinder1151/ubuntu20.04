@@ -205,7 +205,12 @@ body {
   z-index: var(--backZIndex);
 }
 
+/* input[type=range]{
+  -webkit-appearance: none;
+}
+
 input[type=range]::-webkit-slider-runnable-track,input[type=range]::-moz-range-track {
+  -webkit-appearance: none;
   width: 100%;
   height: .5rem;
   background: #ccc;
@@ -222,7 +227,58 @@ input[type=range]::-webkit-slider-thumb,input[type=range]::-moz-range-thumb  {
   border: 1px solid #999;
   background: #fff;
   margin-top: -4px;
+} */
+
+input[type=range] {
+  -webkit-appearance: none;
 }
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  background: #ccc;
+  border-radius: .5rem;
+}
+input[type=range]::-webkit-slider-thumb {
+  border: 1px solid #999;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -.6rem;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  background: #ccc;
+  border-radius: .5rem;
+}
+input[type=range]::-moz-range-thumb {
+  border: 1px solid #999;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
 
 
 /*  */
